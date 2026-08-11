@@ -1,0 +1,40 @@
+# Music Library Organizer — automatyczny builder Windows
+
+Ten projekt zawiera program Python oraz GitHub Actions, które automatycznie budują
+Windows x64 `MusicLibraryOrganizer.exe`.
+
+## Najprostszy sposób — bez Pythona na Twoim komputerze
+
+1. Załóż konto na GitHub: https://github.com/
+2. Utwórz nowe repozytorium, np. `music-library-organizer`.
+3. Wgraj CAŁĄ zawartość tego folderu do repozytorium.
+4. Na GitHub wejdź w:
+   **Actions → Build Windows EXE**
+5. Kliknij **Run workflow**.
+6. Poczekaj, aż zadanie zakończy się zielonym znakiem.
+7. Wejdź w zakończone zadanie.
+8. Na dole znajdziesz **Artifacts**.
+9. Pobierz `MusicLibraryOrganizer-Windows-x64`.
+10. Rozpakuj ZIP i uruchom `MusicLibraryOrganizer.exe`.
+
+Python, pip i PyInstaller są instalowane wyłącznie na serwerze GitHub Actions.
+Na Twoim Windowsie nie trzeba ich instalować.
+
+## Automatyczne budowanie po wersji
+
+Możesz również utworzyć tag:
+
+```text
+v1.0.0
+```
+
+Workflow uruchomi się automatycznie.
+
+## Ważne
+
+EXE jest budowane na `windows-latest`, a więc natywnie w środowisku Windows.
+GitHub Actions zapisuje wynik jako artifact. Dokumentacja `upload-artifact`
+opisuje aktualny mechanizm artefaktów i wersję v4+; ten workflow korzysta
+z aktualnej wersji akcji.
+
+Plik programu nie zawiera cache ani logu — powstaną obok EXE podczas działania.
